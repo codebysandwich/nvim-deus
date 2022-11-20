@@ -369,7 +369,7 @@ local highlight_groups = {
 	--[[ 4.2.7. Searching]]
 	IncSearch  = {style='inverse'},
 	Search     = {bg=yellow, fg=dsdark2},
-	MatchParen = {bg=yellow, fg=green, style={'bold', 'underline'}},
+	MatchParen = {fg=yellow, style={'bold', 'underline'}},
 
 	--[[ 4.2.8. Spelling]]
 	SpellBad   = {style={'undercurl', color=red}},
@@ -932,23 +932,35 @@ local highlight_groups = {
 ]]
 
 local terminal_ansi_colors = {
-	[1]  = black,
-	[2]  = red_dark,
-	[3]  = green_dark,
-	[4]  = orange,
-	[5]  = blue,
-	[6]  = magenta_dark,
-	[7]  = teal,
-	[8]  = gray,
-	[9]  = gray_dark,
-	[10] = red,
-	[11] = green,
-	[12] = yellow,
-	[13] = turqoise,
-	[14] = purple,
-	[15] = cyan,
-	[16] = gray_light
+	-- [1]  = black,
+	-- [2]  = red_dark,
+	-- [3]  = green_dark,
+	-- [4]  = orange,
+	-- [5]  = blue,
+	-- [6]  = magenta_dark,
+	-- [7]  = teal,
+	-- [8]  = gray,
+	-- [9]  = gray_dark,
+	-- [10] = red,
+	-- [11] = green,
+	-- [12] = yellow,
+	-- [13] = turqoise,
+	-- [14] = purple,
+	-- [15] = cyan,
+	-- [16] = gray_light
 }
+
+vim.cmd([[
+
+" EasyMotion: {{{
+
+hi! link EasyMotionTarget Search
+hi! link EasyMotionShade Comment
+
+" }}}
+
+]])
+
 
 --[[ Step 5: Sourcing
 	When you wish to load your colorscheme, simply add this folder with a plugin manager
