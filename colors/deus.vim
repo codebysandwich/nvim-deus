@@ -260,7 +260,7 @@ local highlight_group_normal = {bg=black, fg=dslight1}
 -- This is where the rest of your highlights should go.
 local highlight_groups = {
 	--[[ 4.1. Text Analysis ]]
-	Comment     = {fg=gray, style='italic'},
+	Comment     = {fg=gray, },
 	NonText     = {fg=gray_darker},
 	EndOfBuffer = 'NonText',
 	Whitespace  = 'NonText',
@@ -277,15 +277,15 @@ local highlight_groups = {
 	Identifier = {fg=blue},
 	Function   = {fg=green, style='bold'},
 	TSVariableBuiltin = {fg=orange},
-	TSConstBuiltin = {fg=orange, style='italic'},
-	TSAttribute = {fg=blue, style='italic'},
-	TSParameter = {fg=dslight2, style='italic'},
+	TSConstBuiltin = {fg=orange, },
+	TSAttribute = {fg=blue, },
+	TSParameter = {fg=dslight2, },
 
 	--[[ 4.1.3. Syntax]]
 	Statement   = {fg=red},
-	Conditional = {fg=red,      style='italic'},
+	Conditional = {fg=red, },
 	Repeat      = {fg=red},
-	Label       = {fg=magenta_light1,     style='italic'},
+	Label       = {fg=magenta_light1, },
 	Operator    = {fg=blue},
 	Keyword     = {fg=red},
 	Exception   = {fg=red, style='bold'},
@@ -295,18 +295,18 @@ local highlight_groups = {
 	PreProc   = {fg=tan},
 	Include   = {fg=blue, style='nocombine'},
 	Define    = {fg=blue,        style='nocombine'},
-	Macro     = {fg=blue,        style='italic'},
-	PreCondit = {fg=tan,         style='italic'},
+	Macro     = {fg=blue, },
+	PreCondit = {fg=tan, },
 
 	--[[ 4.1.5. Semantics]]
 	Type         = {fg=yellow},
 	StorageClass = {fg=orange},
 	Structure    = {fg=blue,         style='bold'},
-	Typedef      = {fg=cyan,         style='italic'},
+	Typedef      = {fg=cyan, },
 
 	--[[ 4.1.6. Edge Cases]]
 	Special        = {fg=magenta,   style='bold'},
-	SpecialChar    = {fg=red_light, style='italic'},
+	SpecialChar    = {fg=red_light, },
 	SpecialKey     = 'Character',
 	Tag            = 'Underlined',
 	Delimiter      = {fg=orange},
@@ -358,7 +358,7 @@ local highlight_groups = {
 
 	--[[ 4.2.5. Folds]]
 	FoldColumn = {bg=gray_darker,             style='bold'},
-	Folded     = {bg=dsdark2,  fg=magenta, style='italic'},
+	Folded     = {bg=dsdark2,  fg=magenta, },
 
 	--[[ 4.2.6. Diffs]]
 	DiffAdd    = {fg=green_dark, style='inverse'},
@@ -484,7 +484,7 @@ local highlight_groups = {
 	scssElse      = 'scssIf',
 	scssMixinName      = function(self)
 		local super = self.cssClassName
-		return {bg=super.bg, fg=super.fg, style='Italic'}
+		return {bg=super.bg, fg=super.fg, }
 	end,
 	scssIf                 = 'PreCondit',
 	scssInclude            = 'Include',
@@ -593,7 +593,7 @@ local highlight_groups = {
 	luaIn     = 'luaRepeat',
 	luaStringLongTag = function(self)
 		local delimiter = self.Delimiter
-		return {bg=delimiter.bg, fg=delimiter.fg, style='italic'}
+		return {bg=delimiter.bg, fg=delimiter.fg, }
 	end,
 
 	--[[ 4.3.12. Make ]]
