@@ -893,6 +893,20 @@ local highlight_groups = {
 	ReferencesIcon = 'DefinitionIcon',
 	TargetFileName = 'Directory',
 	TargetWord = 'Title',
+
+	--[[codebysandwich]]
+	--EasyMotion
+	EasyMotionTarget = 'Search',
+	EasyMotionShade = 'Comment',
+	--Signature
+	SignatureMarkText = {fg='#83a598'},
+	SignatureMarkerText = {fg='#d3869b'},
+	--json
+	jsonKeyword = {fg=green},
+	--border
+	Border = {fg=orange},
+	--Telescope
+	TelescopeBorder = 'Border',
 }
 
 --[[ Step 5: Terminal Colors
@@ -949,18 +963,6 @@ local terminal_ansi_colors = {
 	-- [15] = cyan,
 	-- [16] = gray_light
 }
-
-vim.cmd([[
-
-" EasyMotion: {{{
-
-hi! link EasyMotionTarget Search
-hi! link EasyMotionShade Comment
-
-" }}}
-
-]])
-
 
 --[[ Step 5: Sourcing
 	When you wish to load your colorscheme, simply add this folder with a plugin manager
