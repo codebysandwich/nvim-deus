@@ -367,7 +367,7 @@ local highlight_groups = {
 	DiffText   = {style='inverse'},
 
 	--[[ 4.2.7. Searching]]
-	IncSearch  = {style='inverse'},
+	-- IncSearch  = {style='inverse'},
 	Search     = {bg=yellow, fg=dsdark2},
 	MatchParen = {fg=yellow, style={'bold', 'underline'}},
 
@@ -895,16 +895,25 @@ local highlight_groups = {
 	TargetWord = 'Title',
 
 	--[[codebysandwich]]
+	-- DeusColor
+	DeusGreen = {fg=green},
+	DeusWhite = {fg='#ebdbb2'},
+	DeusBlue = {fg='#83a598'},
+	DeusPurple = {fg='#d3869b'},
+	--border
+	Border = {fg='#81D8D0'},
+	--IncSearch
+	IncSearch = 'Search',
 	--EasyMotion
 	EasyMotionTarget = 'Search',
 	EasyMotionShade = 'Comment',
 	--Signature
-	SignatureMarkText = {fg='#83a598'},
-	SignatureMarkerText = {fg='#d3869b'},
+	SignatureMarkText = 'DeusBlue',
+	SignatureMarkerText = 'DeusPurple',
 	--json
-	jsonKeyword = {fg=green},
-	--border
-	Border = {fg=orange},
+	jsonKeyword = 'DeusGreen',
+	jsonQuote = 'DeusGreen',
+	jsonString = 'DeusWhite',
 	--Telescope
 	TelescopeBorder = 'Border',
 }
