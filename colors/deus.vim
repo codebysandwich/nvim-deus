@@ -275,7 +275,8 @@ local highlight_groups = {
 
 	--[[ 4.1.2. Identifiers]]
 	Identifier = {fg=blue},
-	Function   = {fg=green, style='bold'},
+	--[[codebysandwich]]
+	Function   = {fg=navyblue,},
 	TSVariableBuiltin = {fg=orange},
 	TSConstBuiltin = {fg=orange, },
 	TSAttribute = {fg=blue, },
@@ -367,9 +368,10 @@ local highlight_groups = {
 	DiffText   = {style='inverse'},
 
 	--[[ 4.2.7. Searching]]
+	--[[codebysandwich]]
 	-- IncSearch  = {style='inverse'},
 	Search     = {bg=yellow, fg=dsdark2},
-	MatchParen = {fg=yellow, style={'bold', 'underline'}},
+	MatchParen = {fg=yellow, bg=dsdark3, style={'bold', 'underline'}},
 
 	--[[ 4.2.8. Spelling]]
 	SpellBad   = {style={'undercurl', color=red}},
@@ -900,6 +902,9 @@ local highlight_groups = {
 	DeusWhite = {fg='#ebdbb2'},
 	DeusBlue = {fg='#83a598'},
 	DeusPurple = {fg='#d3869b'},
+	-- file
+	Special = {fg='#47A8B5'},
+
 	--border
 	Border = {fg='#81D8D0'},
 	--IncSearch
