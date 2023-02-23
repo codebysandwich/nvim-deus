@@ -276,7 +276,7 @@ local highlight_groups = {
 	--[[ 4.1.2. Identifiers]]
 	Identifier = {fg=blue},
 	--[[codebysandwich]]
-	Function   = {fg=navyblue,},
+	Function   = {fg=navyblue, bg=NONE},
 	TSVariableBuiltin = {fg=orange},
 	TSConstBuiltin = {fg=orange, },
 	TSAttribute = {fg=blue, },
@@ -294,7 +294,8 @@ local highlight_groups = {
 
 	--[[ 4.1.4. Metatextual Information]]
 	PreProc   = {fg=tan},
-	Include   = {fg=blue, style='nocombine'},
+	Include   = 'Keyword',
+	-- Include   = {fg=blue, style='nocombine'},
 	Define    = {fg=blue,        style='nocombine'},
 	Macro     = {fg=blue, },
 	PreCondit = {fg=tan, },
@@ -852,10 +853,16 @@ local highlight_groups = {
 	TSConstBuiltin = 'Constant',
 	TSConstructor  = 'Typedef',
 	TSFuncBuiltin  = 'Function',
-	TSStringEscape = 'Character',
+	-- TSStringEscape = 'Character',
 	TSStringRegex  = 'SpecialChar',
 	TSURI = 'Tag',
 	TSVariableBuiltin = 'Identifier',
+	-- [[sandwich]]
+	["@variable.builtin"] = {fg=tan},
+	["@variable"] = 'DeusWhite',
+	["@attribute.builtin"] = 'Identifier',
+	["@preproc"] = 'Comment',
+	["@constant.builtin"] = 'Constant',
 
 	--[[ 4.4.9. barbar.nvim ]]
 	BufferCurrent       = 'TabLineSel',
@@ -904,7 +911,7 @@ local highlight_groups = {
 	DeusPurple = {fg='#d3869b'},
 	-- file
 	Special = {fg='#47A8B5'},
-
+	SpecialChar = {fg=orange},
 	--border
 	Border = {fg='#81D8D0'},
 	--IncSearch
