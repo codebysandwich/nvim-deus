@@ -107,7 +107,8 @@ local dslight4_256   = { '#a89984', 246, 'grey' }
 
 local tan            = { '#f4c069', 180, 'darkyellow' }
 
-local red            = { '#fb4934', 167, 'red' }
+-- local red            = { '#FB4934', 167, 'red' }
+local red            = { '#E85841', 167, 'red' }
 local red_dark       = { '#a80000', 124, 'darkred' }
 local red_light      = { '#ff4090', 203, 'red' }
 
@@ -336,7 +337,7 @@ local highlight_groups = {
 	StatusLineTermNC = 'StatusLineNC',
 
 	--[[ 4.2.2. Separators]]
-	VertSplit   = { fg = dsdark4 },
+	VertSplit   = { fg = dsdark0 },
 	TabLine     = { bg = gray_darker, fg = dsdark4 },
 	TabLineFill = { bg = blue },
 	TabLineSel  = { fg = dslight3 },
@@ -867,7 +868,10 @@ local highlight_groups = {
 	["@variable"]          = 'DeusWhite',
 	["@attribute.builtin"] = 'Identifier',
 	["@preproc"]           = 'Comment',
+	["@keyword.directive"] = 'Comment',
 	["@constant.builtin"]  = 'Constant',
+	["@Operator"] = { fg = orange },
+	["@punctuation.delimiter"] = {fg = 'DeusWhite'},
 
 	--[[ 4.4.9. barbar.nvim ]]
 	BufferCurrent        = 'TabLineSel',
