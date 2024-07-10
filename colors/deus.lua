@@ -1,4 +1,3 @@
-lua << EOF
 -- This file should be edited by the user. Read the instructions of each section and then edit them as desired.
 
 --[[ Highlite, a Neovim colorscheme template.
@@ -260,6 +259,17 @@ local highlight_group_normal = { bg = black, fg = dslight1 }
 
 -- This is where the rest of your highlights should go.
 local highlight_groups = {
+	-- [[ codebysandwich ]]
+	-- Floating
+	NormalFloat = { bg = '#21252B' },
+	FloatBorder = { fg = gray_darker },
+	-- WinSeparator
+	WinSeparator = { fg = gray_darker },
+
+	--[[ Lazy nvim ]]
+	LazyDimmed = 'Type',
+	LazyProp = 'Type',
+
 	--[[ 4.1. Text Analysis ]]
 	Comment     = { fg = gray, },
 	NonText     = { fg = gray_darker },
@@ -284,6 +294,7 @@ local highlight_groups = {
 	TSConstBuiltin = { fg = orange, },
 	TSAttribute = { fg = blue, },
 	TSParameter = { fg = dslight2, },
+	LazyNormal = { bg = black },
 
 	--[[ 4.1.3. Syntax]]
 	Statement   = { fg = red },
@@ -819,12 +830,16 @@ local highlight_groups = {
 	--[[ 4.4.2. coc.nvim ]]
 	CocErrorHighlight   = { style = { 'undercurl', color = red } },
 	CocHintHighlight    = { style = { 'undercurl', color = magenta } },
+	-- CocHintSign = { fg = gray, style = 'bold'  },
 	CocInfoHighlight    = { style = { 'undercurl', color = pink_light } },
 	CocWarningHighlight = { style = { 'undercurl', color = orange } },
 	CocErrorSign        = 'ALEErrorSign',
-	CocHintSign         = 'HintMsg',
+	-- CocHintSign         = 'HintMsg',
 	CocInfoSign         = 'InfoMsg',
 	CocWarningSign      = 'ALEWarningSign',
+	CocInlayHint = { bg = '#353B45', fg = gray },
+	-- CocFloating = { bg = '#212B33' },
+	-- CocMenuSel = { fg = "DeusWhite",bg = '#7AA697'},
 
 	--[[ 4.4.2. vim-jumpmotion / vim-easymotion ]]
 	EasyMotion = 'IncSearch',
@@ -1062,4 +1077,3 @@ require(vim.g.colors_name)(
 -- Thanks to Romain Lafourcade (https://github.com/romainl) for the original template (romainl/vim-rnb).
 -- vim: ft=lua
 
-EOF
