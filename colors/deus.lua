@@ -1,3 +1,11 @@
+--[[--
+File              : deus.lua
+Author            : sandwich
+Date              : 2024-09-27 14:53:06
+Last Modified Date: 2024-11-08 15:12:56
+Last Modified By  : sandwich
+--]]
+--
 -- This file should be edited by the user. Read the instructions of each section and then edit them as desired.
 
 --[[ Highlite, a Neovim colorscheme template.
@@ -123,7 +131,7 @@ local green_light    = { '#a0ff70', 72, 'green' }
 local blue           = { '#83a598', 109, 'darkblue' }
 local cyan           = { '#8ec07c', 108, 'aqua' }
 local ice            = { '#49a0f0', 63, 'cyan' }
-local teal           = { '#00d0c0', 38, 'cyan' }
+local teal           = { '#70c0ba', 38, 'cyan' }
 local turqoise       = { '#2bff99', 33, 'blue' }
 
 local magenta        = { '#d5508f', 126, 'magenta' }
@@ -286,15 +294,16 @@ local highlight_groups = {
 	Float     = 'Number',
 
 	--[[ 4.1.2. Identifiers]]
-	Identifier = { fg = blue },
+	Identifier        = { fg = blue },
 	--[[codebysandwich]]
-	-- Function   = {fg=navyblue, bg=NONE},
-	Function = 'DeusGreenBlod',
+	Function          = { fg = '#62AFEF' },
+	-- Function = 'DeusGreenBlod',
 	TSVariableBuiltin = { fg = orange },
-	TSConstBuiltin = { fg = orange, },
-	TSAttribute = { fg = blue, },
-	TSParameter = { fg = dslight2, },
-	LazyNormal = { bg = black },
+	TSConstBuiltin    = { fg = orange, },
+	TSAttribute       = { fg = blue, },
+	TSParameter       = { fg = dslight2, },
+	LazyNormal        = { bg = black },
+	LazyButtonActive  = 'Search',
 
 	--[[ 4.1.3. Syntax]]
 	Statement   = { fg = red },
@@ -315,7 +324,8 @@ local highlight_groups = {
 	PreCondit = { fg = tan, },
 
 	--[[ 4.1.5. Semantics]]
-	Type         = { fg = yellow },
+	-- Type         = { fg = yellow },
+	Type         = { fg = '#E5C17C' },
 	StorageClass = { fg = orange },
 	Structure    = { fg = blue, style = 'bold' },
 	Typedef      = { fg = cyan, },
@@ -330,15 +340,15 @@ local highlight_groups = {
 	Debug          = 'WarningMsg',
 
 	--[[ 4.1.7. Help Syntax]]
-	Underlined        = { fg = turqoise, style = 'underline' },
-	Ignore            = { fg = gray },
-	Error             = { bg = red_dark, fg = white },
-	Todo              = { fg = yellow, style = { 'bold', 'underline' } },
+	Underlined = { fg = turqoise, style = 'underline' },
+	Ignore     = { fg = gray },
+	Error      = { bg = red_dark, fg = white },
+	Todo       = { fg = yellow, style = { 'bold', 'underline' } },
 	-- helpHyperTextJump = 'Underlined',
 	-- helpSpecial       = 'Function',
-	Hint              = { bg = magenta, fg = black, style = 'bold' },
-	Info              = { bg = pink_light, fg = black, style = 'bold' },
-	Warning           = { bg = orange, fg = black, style = 'bold' },
+	Hint       = { bg = magenta, fg = black, style = 'bold' },
+	Info       = { bg = pink_light, fg = black, style = 'bold' },
+	Warning    = { bg = orange, fg = black, style = 'bold' },
 
 	--[[ 4.2... Editor UI  ]]
 	--[[ 4.2.1. Status Line]]
@@ -438,7 +448,7 @@ local highlight_groups = {
 	CursorColumn = { bg = gray_dark },
 
 	--[[ 4.2.13. Misc ]]
-	Directory = { fg = ice, style = 'bold' },
+	Directory = { fg = teal, style = 'bold' },
 
 	--[[ 4.3. Programming Languages
 		Everything in this section is OPTIONAL. Feel free to remove everything
@@ -621,25 +631,32 @@ local highlight_groups = {
 	makeSpecTarget = 'Type',
 
 	--[[ 4.3.13. Markdown ]]
-	markdownH1       = { fg = red, style = 'bold' },
-	markdownH2       = { fg = orange, style = 'bold' },
-	markdownH3       = { fg = yellow, style = 'bold' },
-	markdownH4       = { fg = green_dark, style = 'bold' },
-	markdownH5       = { fg = cyan, style = 'bold' },
-	markdownH6       = { fg = purple_light, style = 'bold' },
-	mkdBold          = 'Ignore',
-	mkdCode          = 'Keyword',
-	mkdCodeDelimiter = 'mkdBold',
-	mkdCodeStart     = 'mkdCodeDelimiter',
-	mkdCodeEnd       = 'mkdCodeStart',
-	mkdHeading       = 'Delimiter',
-	mkdItalic        = 'mkdBold',
-	mkdLineBreak     = 'NonText',
-	mkdListItem      = 'Special',
-	mkdRule          = function(self) return { fg = self.Ignore.fg, style = { 'underline', color = self.Delimiter.fg } } end,
-	texMathMatcher   = 'Number',
-	texMathZoneX     = 'Number',
-	texMathZoneY     = 'Number',
+	markdownH1            = { fg = red, style = 'bold' },
+	markdownH2            = { fg = orange, style = 'bold' },
+	markdownH3            = { fg = yellow, style = 'bold' },
+	markdownH4            = { fg = green_dark, style = 'bold' },
+	markdownH5            = { fg = cyan, style = 'bold' },
+	markdownH6            = { fg = purple_light, style = 'bold' },
+	mkdBold               = 'Ignore',
+	mkdCode               = 'Keyword',
+	mkdCodeDelimiter      = 'mkdBold',
+	mkdCodeStart          = 'mkdCodeDelimiter',
+	mkdCodeEnd            = 'mkdCodeStart',
+	mkdHeading            = 'Delimiter',
+	mkdItalic             = 'mkdBold',
+	mkdLineBreak          = 'NonText',
+	mkdListItem           = 'Special',
+	mkdRule               = function(self) return { fg = self.Ignore.fg, style = { 'underline', color = self.Delimiter.fg } } end,
+	texMathMatcher        = 'Number',
+	texMathZoneX          = 'Number',
+	texMathZoneY          = 'Number',
+	--[[treesitter markdown]]
+	["@markup.heading.1"] = 'markdownH1',
+	["@markup.heading.2"] = 'markdownH2',
+	["@markup.heading.3"] = 'markdownH3',
+	["@markup.heading.4"] = 'markdownH4',
+	["@markup.heading.5"] = 'markdownH5',
+	["@markup.heading.6"] = 'markdownH6',
 
 	--[[ 4.3.20. Python ]]
 	pythonBrackets        = 'Delimiter',
@@ -837,7 +854,7 @@ local highlight_groups = {
 	-- CocHintSign         = 'HintMsg',
 	CocInfoSign         = 'InfoMsg',
 	CocWarningSign      = 'ALEWarningSign',
-	CocInlayHint = { bg = '#353B45', fg = gray },
+	CocInlayHint        = { bg = '#353B45', fg = gray },
 	-- CocFloating = { bg = '#212B33' },
 	-- CocMenuSel = { fg = "DeusWhite",bg = '#7AA697'},
 
@@ -872,21 +889,21 @@ local highlight_groups = {
 
 	--[[ 4.4.8. nvim-treesitter ]]
 	-- TSConstBuiltin         = 'Constant',
-	TSConstructor          = 'Typedef',
-	TSFuncBuiltin          = 'Function',
+	TSConstructor              = 'Typedef',
+	TSFuncBuiltin              = 'Function',
 	-- TSStringEscape = 'Character',
-	TSStringRegex          = 'SpecialChar',
-	TSURI                  = 'Tag',
+	TSStringRegex              = 'SpecialChar',
+	TSURI                      = 'Tag',
 	-- TSVariableBuiltin      = 'Identifier',
 	-- [[sandwich]]
-	["@variable.builtin"]  = { fg = tan },
-	["@variable"]          = 'DeusWhite',
-	["@attribute.builtin"] = 'Identifier',
-	["@preproc"]           = 'Comment',
-	["@keyword.directive"] = 'Comment',
-	["@constant.builtin"]  = 'Constant',
-	["@Operator"] = { fg = orange },
-	["@punctuation.delimiter"] = {fg = 'DeusWhite'},
+	["@variable.builtin"]      = { fg = tan },
+	["@variable"]              = 'DeusWhite',
+	["@attribute.builtin"]     = 'Identifier',
+	["@preproc"]               = 'Comment',
+	["@keyword.directive"]     = 'Comment',
+	["@constant.builtin"]      = 'Constant',
+	["@Operator"]              = { fg = orange },
+	["@punctuation.delimiter"] = { fg = 'DeusWhite' },
 
 	--[[ 4.4.9. barbar.nvim ]]
 	BufferCurrent        = 'TabLineSel',
@@ -1076,4 +1093,3 @@ require(vim.g.colors_name)(
 
 -- Thanks to Romain Lafourcade (https://github.com/romainl) for the original template (romainl/vim-rnb).
 -- vim: ft=lua
-
