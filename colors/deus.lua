@@ -2,7 +2,7 @@
 File              : deus.lua
 Author            : sandwich
 Date              : 2024-09-27 14:53:06
-Last Modified Date: 2024-11-08 15:12:56
+Last Modified Date: 2025-08-01 17:45:46
 Last Modified By  : sandwich
 --]]
 --
@@ -304,6 +304,8 @@ local highlight_groups = {
 	TSParameter       = { fg = dslight2, },
 	LazyNormal        = { bg = black },
 	LazyButtonActive  = 'Search',
+	WinBar            = { bg = 'NONE' },
+	WinBarNC          = { bg = 'NONE' },
 
 	--[[ 4.1.3. Syntax]]
 	Statement   = { fg = red },
@@ -448,7 +450,7 @@ local highlight_groups = {
 	CursorColumn = { bg = gray_dark },
 
 	--[[ 4.2.13. Misc ]]
-	Directory = { fg = teal, style = 'bold' },
+	Directory = { fg = teal, bg = black, style = 'bold' },
 
 	--[[ 4.3. Programming Languages
 		Everything in this section is OPTIONAL. Feel free to remove everything
