@@ -2,7 +2,7 @@
 File              : deus.lua
 Author            : sandwich
 Date              : 2024-07-08 00:03:46
-Last Modified Date: 2024-07-08 00:38:25
+Last Modified Date: 2026-09-08 09:37:44
 Last Modified By  : sandwich
 --]]
 --
@@ -36,7 +36,7 @@ local _TYPE_TABLE   = 'table'
 
 -- Determine which set of colors to use.
 local _USE_HEX      = go.termguicolors
-local _USE_256      = string.find(vim.env.TERM, '256')
+local _USE_256      = string.find(vim.env.TERM or '', '256')
 --[[
 	/*
 	 * HELPER FUNCTIONS
