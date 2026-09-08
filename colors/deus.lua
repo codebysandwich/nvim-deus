@@ -269,7 +269,7 @@ local highlight_group_normal = { bg = black, fg = dslight1 }
 local highlight_groups = {
 	-- [[ codebysandwich ]]
 	-- Floating
-	NormalFloat = { bg = '#21252B' },
+	NormalFloat = { bg = { '#21252B', 235, 'black' } },
 	FloatBorder = { fg = gray_darker },
 	-- WinSeparator
 	WinSeparator = { fg = gray_darker },
@@ -296,7 +296,7 @@ local highlight_groups = {
 	--[[ 4.1.2. Identifiers]]
 	Identifier        = { fg = blue },
 	--[[codebysandwich]]
-	Function          = { fg = '#62AFEF' },
+	Function          = { fg = { '#62AFEF', 75, 'blue' } },
 	-- Function = 'DeusGreenBlod',
 	TSVariableBuiltin = { fg = orange },
 	TSConstBuiltin    = { fg = orange, },
@@ -327,7 +327,7 @@ local highlight_groups = {
 
 	--[[ 4.1.5. Semantics]]
 	-- Type         = { fg = yellow },
-	Type         = { fg = '#E5C17C' },
+	Type         = { fg = { '#E5C17C', 180, 'darkyellow' } },
 	StorageClass = { fg = orange },
 	Structure    = { fg = blue, style = 'bold' },
 	Typedef      = { fg = cyan, },
@@ -398,7 +398,7 @@ local highlight_groups = {
 	--[[codebysandwich]]
 	--IncSearch
 	-- IncSearch  = {style='inverse'},
-	IncSearch  = { bg = '#FF966C', fg = dsdark2 },
+	IncSearch  = { bg = { '#FF966C', 209, 'darkyellow' }, fg = dsdark2 },
 	Substitute = { bg = navyblue, fg = white, style = { 'bold' } },
 	Search     = { bg = yellow, fg = dsdark2 },
 	MatchParen = { fg = yellow, bg = dsdark3, style = { 'bold', 'underline' } },
@@ -856,7 +856,7 @@ local highlight_groups = {
 	-- CocHintSign         = 'HintMsg',
 	CocInfoSign         = 'InfoMsg',
 	CocWarningSign      = 'ALEWarningSign',
-	CocInlayHint        = { bg = '#353B45', fg = gray },
+	CocInlayHint        = { bg = { '#353B45', 237, 'black' }, fg = gray },
 	-- CocFloating = { bg = '#212B33' },
 	-- CocMenuSel = { fg = "DeusWhite",bg = '#7AA697'},
 
@@ -950,14 +950,14 @@ local highlight_groups = {
 	-- DeusColor
 	DeusGreen = { fg = green },
 	DeusGreenBlod = { fg = green, style = "bold" },
-	DeusWhite = { fg = '#ebdbb2' },
-	DeusBlue = { fg = '#83a598' },
-	DeusPurple = { fg = '#d3869b' },
+	DeusWhite = { fg = dslight1 },
+	DeusBlue = { fg = blue },
+	DeusPurple = { fg = { '#d3869b', 174, 'magenta' } },
 	-- file
-	Special = { fg = '#47A8B5' },
+	Special = { fg = { '#47A8B5', 73, 'cyan' } },
 	SpecialChar = { fg = orange },
 	--border
-	Border = { fg = '#81D8D0' },
+	Border = { fg = { '#81D8D0', 116, 'cyan' } },
 	--EasyMotion
 	EasyMotionTarget = 'Search',
 	EasyMotionShade = 'Comment',
