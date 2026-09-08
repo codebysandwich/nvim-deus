@@ -129,7 +129,7 @@ local green          = { '#98C379', 142, 'green' }
 local green_light    = { '#a0ff70', 72, 'green' }
 
 local blue           = { '#83a598', 109, 'darkblue' }
-local cyan           = { '#8ec07c', 108, 'aqua' }
+local cyan           = { '#8ec07c', 108, 'darkcyan' }
 local ice            = { '#49a0f0', 63, 'cyan' }
 local teal           = { '#70c0ba', 38, 'cyan' }
 local turqoise       = { '#2bff99', 33, 'blue' }
