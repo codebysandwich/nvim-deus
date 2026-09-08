@@ -63,7 +63,8 @@ local function get(color, index) -- {{{ †
 	if type(color) == _TYPE_TABLE and color[index] then
 		return color[index]
 	elseif type(color) == _TYPE_STRING then
-		return color
+		-- 裸 hex 字符串色仅真彩分支可用；cterm 字段不认 hex，降级为 NONE 避免 E421
+		return index == _PALETTE_HEX and color or _NONE
 	else
 		return _NONE
 	end
